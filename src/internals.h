@@ -211,19 +211,6 @@ typedef union {
 #endif
 } MDBX_atomic_uint64_t;
 
-/* The minimum number of keys required in a database page.
- * Setting this to a larger value will place a smaller bound on the
- * maximum size of a data item. Data items larger than this size will
- * be pushed into overflow pages instead of being stored directly in
- * the B-tree node. This value used to default to 4. With a page size
- * of 4096 bytes that meant that any item larger than 1024 bytes would
- * go into an overflow page. That also meant that on average 2-3KB of
- * each overflow page was wasted space. The value cannot be lower than
- * 2 because then there would no longer be a tree structure. With this
- * value, items larger than 2KB will go into overflow pages, and on
- * average only 1KB will be wasted. */
-#define MDBX_MINKEYS 2
-
 /* A stamp that identifies a file as an MDBX file.
  * There's nothing special about this value other than that it is easily
  * recognizable, and it will reflect any byte order mismatches. */
@@ -939,8 +926,9 @@ struct MDBX_env {
 #define me_lfd me_lck_mmap.fd
 #define me_lck me_lck_mmap.lck
 
-  unsigned me_psize;    /* DB page size, initialized from me_os_psize */
-  uint8_t me_psize2log; /* log2 of DB page size */
+  unsigned me_psize;        /* DB page size, initialized from me_os_psize */
+  unsigned me_leaf_nodemax; /* max size of a leaf-node */
+  uint8_t me_psize2log;     /* log2 of DB page size */
   int8_t me_stuck_meta; /* recovery-only: target meta page or less that zero */
   unsigned me_os_psize; /* OS page size, from mdbx_syspagesize() */
   unsigned me_maxreaders; /* size of the reader table */
@@ -975,9 +963,8 @@ struct MDBX_env {
   MDBX_PNL me_retired_pages;
   /* Number of freelist items that can fit in a single overflow page */
   unsigned me_maxgc_ov1page;
-  unsigned me_branch_nodemax; /* max size of a branch-node */
-  uint32_t me_live_reader;    /* have liveness lock in reader table */
-  void *me_userctx;           /* User-settable context */
+  uint32_t me_live_reader; /* have liveness lock in reader table */
+  void *me_userctx;        /* User-settable context */
   MDBX_atomic_uint64_t *me_sync_timestamp;
   MDBX_atomic_uint64_t *me_autosync_period;
   atomic_pgno_t *me_unsynced_pages;
