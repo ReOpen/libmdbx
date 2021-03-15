@@ -1,0 +1,25 @@
+var classmdbx_1_1error =
+[
+    [ "error", "classmdbx_1_1error.html#a62ff35c69ad23ed52ba3757808d91e36", null ],
+    [ "error", "classmdbx_1_1error.html#a66f566cd99e7b590afe03dc209ae3077", null ],
+    [ "error", "classmdbx_1_1error.html#ae76919234d592bb1af98007338094b5c", null ],
+    [ "code", "classmdbx_1_1error.html#a2648204aaa3f057d34d2d44bcd0fea88", null ],
+    [ "is_failure", "classmdbx_1_1error.html#af12fed1e7ec785e8e289e593852466a2", null ],
+    [ "is_mdbx_error", "classmdbx_1_1error.html#a2e2d2f9f1480e0ea253bee1c79eb956a", null ],
+    [ "is_result_false", "classmdbx_1_1error.html#af968ea55345ad97d2e9dd18d24a8d03b", null ],
+    [ "is_result_true", "classmdbx_1_1error.html#a9cee9e40b10d89691a3b663e3a24db56", null ],
+    [ "is_success", "classmdbx_1_1error.html#a0407ef8c05b24ca8189e6ea7ac1be5b6", null ],
+    [ "message", "classmdbx_1_1error.html#a1f02e55c92a8e6162336cf17b3681a90", null ],
+    [ "operator=", "classmdbx_1_1error.html#a048ca2078fd2f098b818cf1d1b2983b7", null ],
+    [ "operator=", "classmdbx_1_1error.html#a26552d144279e100e00dcc3f64773272", null ],
+    [ "panic", "classmdbx_1_1error.html#a526885b14e8a019cf03b1f4ec0d8c05a", null ],
+    [ "panic_on_failure", "classmdbx_1_1error.html#ad133742b9c84a22802ad3bdd44790da1", null ],
+    [ "success_or_panic", "classmdbx_1_1error.html#a0c99b8feff6856b3aee430b343eea919", null ],
+    [ "success_or_throw", "classmdbx_1_1error.html#a5a53be7a4198b1d69ee9f6af75d91ba0", null ],
+    [ "success_or_throw", "classmdbx_1_1error.html#a3ea1f0ba5b5c1173ec2ad197cdb102cf", null ],
+    [ "throw_exception", "classmdbx_1_1error.html#a23ea6a2e6c02a6e693431e2da01a721c", null ],
+    [ "throw_on_failure", "classmdbx_1_1error.html#a237267a7ffb6f590ad4a7c4a762b2407", null ],
+    [ "what", "classmdbx_1_1error.html#ace1c3a7a587a58cee87fae4d149b7f60", null ],
+    [ "operator!=", "classmdbx_1_1error.html#a43a31d3f4e4774d4adf80f8bb908671f", null ],
+    [ "operator==", "classmdbx_1_1error.html#a2e3a61b8a39d00e1401e8e9ce581fe2d", null ]
+];

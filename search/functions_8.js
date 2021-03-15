@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['id_1052',['id',['../classmdbx_1_1txn.html#ab2dde7ef2062be491ebca71c87c7dc68',1,'mdbx::txn']]],
+  ['info_1053',['info',['../structmdbx_1_1map__handle_1_1info.html#a55f21b58fe9ac3b3e8b307a93a6c87cc',1,'mdbx::map_handle::info::info(map_handle::flags flags, map_handle::state state) noexcept'],['../structmdbx_1_1map__handle_1_1info.html#a890acd2999b5a5091fe4915d6a398c83',1,'mdbx::map_handle::info::info(const info &amp;) noexcept=default']]],
+  ['insert_1054',['insert',['../classmdbx_1_1txn.html#ac7157e79a59528681864f8dc244b029e',1,'mdbx::txn::insert()'],['../classmdbx_1_1cursor.html#a4337b9413636f3755974d95ad8d4a1e6',1,'mdbx::cursor::insert()']]],
+  ['insert_5freserve_1055',['insert_reserve',['../classmdbx_1_1txn.html#a2021d02f90f2f0bfe5318cc6e497e9e0',1,'mdbx::txn::insert_reserve()'],['../classmdbx_1_1cursor.html#a746521ce6b67551f0d2532d368cccbc9',1,'mdbx::cursor::insert_reserve()']]],
+  ['invalid_1056',['invalid',['../structmdbx_1_1slice.html#af64d34b0ad215c1612c16dd3e1ecda44',1,'mdbx::slice']]],
+  ['invalidate_1057',['invalidate',['../structmdbx_1_1slice.html#afd1e9c857f06f54e08bfa187bf243fe1',1,'mdbx::slice']]],
+  ['is_5fbase58_1058',['is_base58',['../structmdbx_1_1slice.html#a73da4504ae4f1b80e2fcded85ab3e473',1,'mdbx::slice']]],
+  ['is_5fbase64_1059',['is_base64',['../structmdbx_1_1slice.html#a5a35763f4c526ae3398960a1c2a07dd2',1,'mdbx::slice']]],
+  ['is_5fclean_1060',['is_clean',['../classmdbx_1_1exception__thunk.html#a2e70a4f114a7462c53facc86de2dc0b8',1,'mdbx::exception_thunk']]],
+  ['is_5fdirty_1061',['is_dirty',['../classmdbx_1_1txn.html#a637fc8cac48e5cfcd6ad1aa1992c6cd8',1,'mdbx::txn']]],
+  ['is_5fempty_1062',['is_empty',['../classmdbx_1_1env.html#ab7f41d8cfacd43b05a74b2838855167f',1,'mdbx::env']]],
+  ['is_5ffailure_1063',['is_failure',['../classmdbx_1_1error.html#af12fed1e7ec785e8e289e593852466a2',1,'mdbx::error']]],
+  ['is_5ffreestanding_1064',['is_freestanding',['../classmdbx_1_1buffer.html#aceb7a18c96c47402cc28ea44ecc39fd8',1,'mdbx::buffer']]],
+  ['is_5fhex_1065',['is_hex',['../structmdbx_1_1slice.html#a6431627b97ee96678994888369091534',1,'mdbx::slice']]],
+  ['is_5fmdbx_5ferror_1066',['is_mdbx_error',['../classmdbx_1_1error.html#a2e2d2f9f1480e0ea253bee1c79eb956a',1,'mdbx::error']]],
+  ['is_5fnull_1067',['is_null',['../structmdbx_1_1slice.html#a4fe0310c3746965f092f30de6807c2c6',1,'mdbx::slice::is_null()'],['../classmdbx_1_1buffer.html#ab756e2ae92e2e833be79f14cdb6ff803',1,'mdbx::buffer::is_null()']]],
+  ['is_5fprintable_1068',['is_printable',['../structmdbx_1_1slice.html#a329fdd57ba7066275bb289ca5a86afbb',1,'mdbx::slice']]],
+  ['is_5fpristine_1069',['is_pristine',['../classmdbx_1_1env.html#a830cf8334bbdfd956f5cca0b81887028',1,'mdbx::env']]],
+  ['is_5freadonly_1070',['is_readonly',['../classmdbx_1_1txn.html#a8676ad34059bfc180a857f6603986bd6',1,'mdbx::txn']]],
+  ['is_5freadwrite_1071',['is_readwrite',['../classmdbx_1_1txn.html#a2ebd69826b76b0d73569553236bd11ed',1,'mdbx::txn']]],
+  ['is_5freference_1072',['is_reference',['../classmdbx_1_1buffer.html#a1bf701a2a752755740257e5210757306',1,'mdbx::buffer']]],
+  ['is_5fresult_5ffalse_1073',['is_result_false',['../classmdbx_1_1error.html#af968ea55345ad97d2e9dd18d24a8d03b',1,'mdbx::error']]],
+  ['is_5fresult_5ftrue_1074',['is_result_true',['../classmdbx_1_1error.html#a9cee9e40b10d89691a3b663e3a24db56',1,'mdbx::error']]],
+  ['is_5fsuccess_1075',['is_success',['../classmdbx_1_1error.html#a0407ef8c05b24ca8189e6ea7ac1be5b6',1,'mdbx::error']]],
+  ['is_5fvalid_1076',['is_valid',['../structmdbx_1_1slice.html#a0e3bf067eaa40232827978d685d212d1',1,'mdbx::slice']]]
+];
