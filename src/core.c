@@ -17106,13 +17106,14 @@ static int mdbx_page_split(MDBX_cursor *mc, const MDBX_val *newkey,
   mn.mc_ki[ptop] = mc->mc_ki[ptop] + 1;
 
   unsigned split_indx;
-  if (nflags & MDBX_APPEND) {
-    mn.mc_ki[mn.mc_top] = 0;
+  if ((nflags & MDBX_APPEND) && minkeys == 1) {
     sepkey = *newkey;
+    mdbx_cassert(mc, newindx == nkeys);
     split_indx = newindx;
-    nkeys = 0;
+    mdbx_cassert(mc,
+                 split_indx >= minkeys && split_indx <= nkeys - minkeys + 1);
   } else {
-    split_indx = (nkeys + 1) / 2;
+    split_indx = (nflags & MDBX_APPEND) ? nkeys - minkeys + 1 : (nkeys + 1) / 2;
     mdbx_cassert(mc,
                  split_indx >= minkeys && split_indx <= nkeys - minkeys + 1);
     if (IS_LEAF2(rp)) {
@@ -17280,8 +17281,9 @@ static int mdbx_page_split(MDBX_cursor *mc, const MDBX_val *newkey,
     mn.mc_top--;
     did_split = 1;
     /* We want other splits to find mn when doing fixups */
-    WITH_CURSOR_TRACKING(
-        mn, rc = mdbx_page_split(&mn, &sepkey, NULL, rp->mp_pgno, 0));
+    WITH_CURSOR_TRACKING(mn,
+                         rc = mdbx_page_split(&mn, &sepkey, NULL, rp->mp_pgno,
+                                              nflags & MDBX_APPEND));
     if (unlikely(rc != MDBX_SUCCESS))
       goto done;
     mdbx_cassert(mc, (int)mc->mc_snum - snum == mc->mc_db->md_depth - depth);
@@ -17324,7 +17326,7 @@ static int mdbx_page_split(MDBX_cursor *mc, const MDBX_val *newkey,
     goto done;
   }
 
-  if (nflags & MDBX_APPEND) {
+  if ((nflags & MDBX_APPEND) && split_indx == newindx) {
     mc->mc_pg[mc->mc_top] = rp;
     mc->mc_ki[mc->mc_top] = 0;
     switch (PAGETYPE(rp)) {
@@ -17446,17 +17448,15 @@ static int mdbx_page_split(MDBX_cursor *mc, const MDBX_val *newkey,
       if (!(node_flags(node) & F_BIGDATA))
         newdata->iov_base = node_data(node);
     }
-  } else {
-    if (newindx >= split_indx) {
-      mc->mc_pg[mc->mc_top] = rp;
-      mc->mc_ki[ptop]++;
-      /* Make sure mc_ki is still valid. */
-      if (mn.mc_pg[ptop] != mc->mc_pg[ptop] &&
-          mc->mc_ki[ptop] >= page_numkeys(mc->mc_pg[ptop])) {
-        for (i = 0; i <= ptop; i++) {
-          mc->mc_pg[i] = mn.mc_pg[i];
-          mc->mc_ki[i] = mn.mc_ki[i];
-        }
+  } else if (newindx >= split_indx) {
+    mc->mc_pg[mc->mc_top] = rp;
+    mc->mc_ki[ptop]++;
+    /* Make sure mc_ki is still valid. */
+    if (mn.mc_pg[ptop] != mc->mc_pg[ptop] &&
+        mc->mc_ki[ptop] >= page_numkeys(mc->mc_pg[ptop])) {
+      for (i = 0; i <= ptop; i++) {
+        mc->mc_pg[i] = mn.mc_pg[i];
+        mc->mc_ki[i] = mn.mc_ki[i];
       }
     }
   }
